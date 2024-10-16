@@ -1,0 +1,137 @@
+---
+import Image from "astro/components/Image.astro";
+import LogoBrand from "../../public/quick-logo.webp";
+---
+
+<section id="queofrecemos" class=" py-20 bg-zinc-300">
+  <div class="content flex flex-col mx-auto w-[80vw]">
+    <h2 class="text-center text-2xl font-bold text-sky-900">
+      ¿Qué te ofrecemos en Quick Dev Solutions?
+    </h2>
+    <p class="text-cyan-950">
+      Te ofrecemos aplicaciones <strong>diseñadas</strong> específicas para el usuario
+      con soluciones a medida. Somos expertos en el <strong>diseño web</strong>,
+      y junto a ello te ofrecemos un producto escalable, y con acceso desde <strong
+        >cualquier dispositivo.</strong
+      > En Quick Dev Solutions, entendemos que cada cliente tiene necesidades únicas.
+      Por eso, trabajamos en estrecha <strong>colaboración</strong> contigo para
+      desarrollar soluciones personalizadas que se adapten a tus objetivos empresariales.
+      Nuestro enfoque es <strong>ágil</strong> y <strong>flexible</strong>, lo
+      que nos permite realizar ajustes en tiempo real y garantizar que cada
+      aspecto de tu proyecto esté alineado con tus expectativas. Además, nuestra
+      experiencia en <strong>optimización de procesos</strong> asegura que puedas
+      maximizar la eficiencia y reducir costos operativos.
+    </p>
+  </div>
+
+  <section
+    class="card-gallery items-center grid grid-flow-row gap-4 my-4 px-28  grid-cols-3"
+  >
+    <div class="service-card">
+      <h3 class="card-title">Posicionamiento web</h3>
+      <p class="card-body">
+        Gracias a nuestros métodos de SEO, podemos posicionar tu página entre
+        los primeros resultados en los motores de búsqueda. Con nuestra
+        experiencia, mejoramos la visibilidad de tu sitio, atrayendo más tráfico
+        y potenciales clientes.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 class="card-title">Gestión de datos</h3>
+      <p class="card-body">
+        Tus datos a tu alcance, gracias a interfaces dinámicas y fáciles de
+        utilizar. Facilitamos la organización y análisis de datos, mejorando tu
+        toma de decisiones.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 class="card-title">Sitios seguros</h3>
+      <p class="card-body">
+        Utilizamos métodos de encriptado para que tus contraseñas y otros datos
+        sensibles estén protegidos del alcance de los atacantes. Te garantizamos
+        una experiencia de navegación segura y confiable para tus usuarios.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 class="card-title">Soporte técnico</h3>
+      <p class="card-body">
+        Nuestro equipo está disponible para ayudarte con cualquier inconveniente
+        técnico. Ofrecemos asistencia 24/7 para que siempre tengas la ayuda que
+        necesitas.
+      </p>
+    </div>
+    <a href="#">
+      <div class="logo size-72 bg-gray-800 p-12 flex justify-center mx-auto items-center shadow-2xl rounded-full">
+        <Image src={LogoBrand} alt="Logo de la empresa Quick Dev Solutions" />
+      </div>
+    </a>
+    <div class="service-card">
+      <h3 class="card-title">Desarrollo personalizado</h3>
+      <p class="card-body">
+        Creamos soluciones a medida para satisfacer tus necesidades específicas.
+        Desde la conceptualización hasta la implementación, tu visión se
+        convierte en realidad.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 class="card-title">Capacitación</h3>
+      <p class="card-body">
+        Ofrecemos formación para que puedas aprovechar al máximo nuestras
+        herramientas y servicios. Entrenamos a tu equipo para maximizar el uso
+        de la tecnología en tus operaciones diarias.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 class="card-title">Optimización de procesos</h3>
+      <p class="card-body">
+        Te ayudamos a identificar áreas de mejora en tu flujo de trabajo para
+        maximizar la eficiencia y reducir costos. Analizamos y redefinimos tus
+        procesos para lograr una mayor productividad.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3 class="card-title">Desarrollo de aplicaciones móviles</h3>
+      <p class="card-body">
+        Creamos aplicaciones móviles intuitivas y funcionales que permiten a tus
+        usuarios acceder a tus servicios desde cualquier lugar. Con diseños
+        adaptativos, aseguramos una experiencia de usuario excepcional en todas
+        las plataformas.
+      </p>
+    </div>
+  </section>
+</section>
+
+<style>
+  .card-gallery {
+    @apply mx-auto; /* Centra horizontalmente */
+  }
+
+  .service-card {
+    border-radius: 7px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: 10px 0; /* Margen entre tarjetas */
+    transition: transform 0.3s; /* Transición para efecto al pasar el mouse */
+  }
+
+  .service-card h3 {
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .service-card:hover {
+    transform: scale(
+      1.05
+    ); /* Aumentar ligeramente el tamaño al pasar el mouse */
+  }
+
+  .card-title {
+    font-size: 1.5rem; /* Tamaño del título */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+    @apply text-sky-900
+  }
+  
+  .card-body {
+    color: #000000; /* Color del cuerpo del texto */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+  }
+</style>

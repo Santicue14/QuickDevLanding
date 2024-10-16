@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "nombre": "Catálogo de cerrajería",
+      "descripcion": "Un catálogo interactivo diseñado para mostrar una amplia variedad de productos de cerrajería, ofreciendo a los usuarios una navegación sencilla y accesible. El sitio incluye imágenes de productos, descripciones detalladas y un sistema de búsqueda para facilitar la experiencia del usuario, permitiendo encontrar rápidamente lo que necesitan. Además, el catálogo está optimizado para dispositivos móviles, garantizando una visualización adecuada en cualquier pantalla.",
+      "link": "https://www.grllaves.com.ar"
+    },
+    {
+      "id": 2,
+      "nombre": "Presentación de empresa",
+      "descripcion": "Una atractiva landing page diseñada para captar la atención de los visitantes y convertirlos en clientes potenciales. La página incluye secciones informativas sobre los servicios ofrecidos, testimonios de clientes satisfechos y un formulario de contacto para facilitar la comunicación. Con un diseño moderno y responsive, esta landing page está optimizada para SEO, asegurando una buena visibilidad en los motores de búsqueda.",
+      "link": "https://parquizacionesgreenpark.vercel.app/"
+    },
+    {
+      "id": 3,
+      "nombre": "Gestor para empresas",
+      "descripcion": "Un gestor integral diseñado para ayudar a las empresas a administrar sus operaciones de manera más eficiente. Este sistema permite a los usuarios gestionar clientes, realizar seguimiento de proyectos y generar reportes de desempeño. Con una interfaz intuitiva y funcionalidades personalizables, el gestor está orientado a mejorar la productividad y facilitar la toma de decisiones estratégicas en las empresas.",
+      "link": "https://parquizacionesgreenpark.vercel.app/"
+    },
+    {
+        "id": 4,
+        "nombre": "Reportes de alarmas para Sc Jhonson",
+        "descripcion": "Este sistema permite la gestión eficiente de los reportes de alarmas generados en las instalaciones de SC Johnson. Los usuarios pueden filtrar los reportes por línea de producto, lo que facilita la identificación y el análisis de incidentes específicos. El sistema proporciona una interfaz intuitiva que permite a los operadores acceder rápidamente a los datos relevantes, visualizar el historial de alarmas y realizar un seguimiento de las tendencias a lo largo del tiempo. Además, cuenta con funciones de exportación y generación de informes que ayudan en la toma de decisiones y en la mejora continua de los procesos de seguridad y respuesta ante incidentes. Este sistema es clave para garantizar la seguridad operativa y el cumplimiento de las normativas en las instalaciones de SC Johnson.",
+        "link": "https://parquizacionesgreenpark.vercel.app/"
+    }
+  ]
+  
