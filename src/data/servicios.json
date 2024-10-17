@@ -1,0 +1,43 @@
+[
+    {
+      "id": "1",
+      "title": "Posicionamiento web",
+      "description": "Gracias a nuestros métodos de SEO, podemos posicionar tu página entre los primeros resultados en los motores de búsqueda. Con nuestra experiencia, mejoramos la visibilidad de tu sitio, atrayendo más tráfico y potenciales clientes."
+    },
+    {
+      "id": "2",
+      "title": "Gestión de datos",
+      "description": "Tus datos a tu alcance, gracias a interfaces dinámicas y fáciles de utilizar. Facilitamos la organización y análisis de datos, mejorando tu toma de decisiones."
+    },
+    {
+      "id": "3",
+      "title": "Sitios seguros",
+      "description": "Utilizamos métodos de encriptado para que tus contraseñas y otros datos sensibles estén protegidos del alcance de los atacantes. Te garantizamos una experiencia de navegación segura y confiable para tus usuarios."
+    },
+    {
+      "id": "4",
+      "title": "Soporte técnico",
+      "description": "Nuestro equipo está disponible para ayudarte con cualquier inconveniente técnico. Ofrecemos asistencia 24/7 para que siempre tengas la ayuda que necesitas."
+    },
+    {
+      "id": "5",
+      "title": "Desarrollo personalizado",
+      "description": "Creamos soluciones a medida para satisfacer tus necesidades específicas. Desde la conceptualización hasta la implementación, tu visión se convierte en realidad."
+    },
+    {
+      "id": "6",
+      "title": "Capacitación",
+      "description": "Ofrecemos formación para que puedas aprovechar al máximo nuestras herramientas y servicios. Entrenamos a tu equipo para maximizar el uso de la tecnología en tus operaciones diarias."
+    },
+    {
+      "id": "7",
+      "title": "Optimización de procesos",
+      "description": "Te ayudamos a identificar áreas de mejora en tu flujo de trabajo para maximizar la eficiencia y reducir costos. Analizamos y redefinimos tus procesos para lograr una mayor productividad."
+    },
+    {
+      "id": "8",
+      "title": "Desarrollo de aplicaciones móviles",
+      "description": "Creamos aplicaciones móviles intuitivas y funcionales que permiten a tus usuarios acceder a tus servicios desde cualquier lugar. Con diseños adaptativos, aseguramos una experiencia de usuario excepcional en todas las plataformas."
+    }
+  ]
+  

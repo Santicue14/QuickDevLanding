@@ -1,43 +1,49 @@
 ---
-// Importa los componentes necesarios
 import Image from "astro/components/Image.astro";
 import LogoQuick from "../../public/quick-logo.webp";
 import ArrowDown from "../../public/resources/arrow-down.svg";
 import proyectos from "../data/proyectos.json";
 ---
-
-<nav class="flex items-center justify-between px-12 sticky z-10 top-0 transition-all duration-300 navbar-transparent" id="navbar">
-  <a href="#">
-    <div class="logo">
-      <Image
-        src={LogoQuick}
-        alt="Imagen Logo Quick Dev Solutions"
-        class="img-svg max-w-20"
-      />
-    </div>
-  </a>
-  <ul class="flex gap-6 font-semibold uppercase">
-    <li class="lista-desplegable relative">
-      <a href="#proyectos" class="flex gap-4">
-        Proyectos realizados
-        <Image src={ArrowDown} alt="Flecha para abajo" class="text-white" />
-      </a>
-      <ul
-        class="contenido-desplegable absolute bg-grisOscuro left-0 top-full opacity-0 invisible transition-opacity duration-300 ease-in-out"
-      >
-        {proyectos.map((proyecto) => (
-          <a href={`proyectos/${proyecto.id}`} target="_blank">
+<nav
+class="flex items-center justify-between px-12 sticky z-10 top-0 transition-all duration-300 navbar-transparent"
+id="navbar"
+>
+<a href="/">
+  <div class="logo">
+    <Image
+      loading="eager"
+      src={LogoQuick}
+      alt="Imagen Logo Quick Dev Solutions"
+      class="img-svg max-w-20"
+    />
+  </div>
+</a>
+<ul class="flex gap-6 font-semibold uppercase">
+  <li class="lista-desplegable relative">
+    <a href="proyectos" class="flex gap-4">
+      Proyectos realizados
+      <Image loading="lazy" src={ArrowDown} alt="Flecha para abajo" class="text-white" />
+    </a>
+    <ul
+      class="contenido-desplegable absolute bg-cyan-950 left-0 top-full opacity-0 invisible transition-opacity duration-300 ease-in-out"
+    >
+      {
+        proyectos.map((proyecto) => (
+          <a href={`proyecto/${proyecto.id}`} title={`Proyecto ${proyecto.nombre}`}>
             <li>{proyecto.nombre}</li>
           </a>
-        ))}
-      </ul>
-    </li>
-    <li>
-      <a href="#queofrecemos">¿Qué ofrecemos?</a>
-    </li>
-    <li>Sobre nosotros</li>
-    <li>Contacto</li>
-  </ul>
+        ))
+      }
+    </ul>
+  </li>
+  <li>
+    <a href="/servicios">¿Qué ofrecemos?</a>
+  </li>
+  <li>
+    <a href="/about"> Sobre nosotros </a>
+  </li>
+  <li>Contacto</li>
+</ul>
 </nav>
 
 <style>
@@ -47,7 +53,7 @@ import proyectos from "../data/proyectos.json";
   }
 
   .navbar-black {
-    @apply bg-slate-900
+    @apply bg-slate-900;
   }
 
   .lista-desplegable {
@@ -78,21 +84,38 @@ import proyectos from "../data/proyectos.json";
   }
 
   ul li:hover:not(.lista-desplegable) {
-    color: #a4a2a2;
+    @apply underline;
   }
 </style>
 
-
-<script>
-  const navbar = document.getElementById('navbar');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 624) { // Cambia el valor según tus necesidades
-      navbar.classList.remove('navbar-transparent');
-      navbar.classList.add('navbar-black');
+<script is:inline>
+  function updateNavbarStyle() {
+    const navbar = document.querySelector("#navbar");
+    // Verificar la ubicación actual
+    if (window.location.pathname !== "/") {
+      navbar.classList.add("navbar-black");
     } else {
-      navbar.classList.remove('navbar-black');
-      navbar.classList.add('navbar-transparent');
+      navbar.classList.remove("navbar-black");
     }
-  });
+  }
+
+  // Al cargar la página
+  document.addEventListener("DOMContentLoaded", updateNavbarStyle);
+
+  // Al navegar con el historial (hacia atrás o hacia adelante)
+  window.onpopstate = function () {
+    updateNavbarStyle();
+  };
+
+  // Observador de cambios en el history
+  const originalPushState = history.pushState;
+  history.pushState = function (state) {
+    originalPushState.apply(history, arguments);
+    updateNavbarStyle();
+  };
+  const originalReplaceState = history.replaceState;
+  history.replaceState = function (state) {
+    originalReplaceState.apply(history, arguments);
+    updateNavbarStyle();
+  };
 </script>

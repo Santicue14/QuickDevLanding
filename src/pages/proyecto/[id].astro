@@ -1,0 +1,105 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import proyectos from '../../data/proyectos.json';
+
+// Obtener las rutas estáticas
+export const getStaticPaths = (() => {
+    return proyectos.map((proyecto) => ({
+        params: { id: proyecto.id.toString() }, // Convierte el ID a string
+    }));
+}) satisfies GetStaticPaths;
+
+// Obtener el proyecto correspondiente
+const proyecto = proyectos.find(proy => proy.id === Number(Astro.params.id));
+---
+
+<Layout title={`${proyecto? proyecto.nombre : 'Proyecto '} | QuickDev Solutions`}>
+    <section class="proyecto-container">
+        <div class="proyecto-header">
+            <h1 class="proyecto-title">{proyecto.nombre}</h1>
+            <p class="proyecto-description">{proyecto.descripcion}</p>
+        </div>
+
+        <div class="proyecto-media">
+            <!-- Video de presentación de YouTube -->
+            <iframe 
+                class="proyecto-video"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                title="Presentación del proyecto"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+        </div>
+
+        <div class="proyecto-details">
+            <a href={proyecto.link} target="_blank" class="btn btn-primary">
+                Ver Proyecto
+            </a>
+        </div>
+    </section>
+
+    <style>
+        .proyecto-container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f8fafc;
+            border-radius: 12px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .proyecto-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .proyecto-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .proyecto-description {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-top: 1rem;
+        }
+
+        .proyecto-media {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .proyecto-video {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .proyecto-details {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .btn-primary {
+            background-color: #0ea5e9;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0284c7;
+        }
+    </style>
+</Layout>

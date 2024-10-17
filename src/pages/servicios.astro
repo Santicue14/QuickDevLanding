@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import LogoBrand from "../../public/quick-logo.webp";
+import servicios from "../data/servicios.json";
+---
+
+<Layout title="Servicios | QuickDev Solutions">
+  <section
+    id="queofrecemos"
+    class=" h-[90vh] items-center bg-zinc-300 pb-8 drop-shadow-2xl flex justify-between mx-auto px-12"
+  >
+    <div class="content">
+      <div class="nav">
+        <h2 class="text-center text-2xl font-bold text-sky-900">
+          ¿Qué te ofrecemos en Quick Dev Solutions?
+        </h2>
+        <nav>
+          <ul class="gap-1 mt-4 flex flex-col text-cyan-900 font-semibold">
+            {
+              servicios.map((servicio) => (
+                <li
+                  onclick={`scrollToService('${servicio.id}')`}
+                  class="linea-nav cursor-pointer hover:text-cyan-600 transition-colors w-fit"
+                >
+                  {`> ${servicio.title}`}
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div>
+      <a href="/">
+        <div
+          class="logo size-64 bg-gray-800 p-12 flex justify-center mx-auto items-center shadow-2xl rounded-full"
+        >
+          <Image loading="eager"  src={LogoBrand} alt="Logo de la empresa Quick Dev Solutions" />
+        </div>
+      </a>
+    </div>
+    <section class="card-gallery overflow-hidden max-h-72 overflow-y-auto">
+      {
+        servicios.map((servicio) => (
+          <div class="h-[17.9rem] pr-28 flex flex-col items-center">
+            <div class="service-card" id={servicio.id}>
+              <h3 class="card-title">{servicio.title}</h3>
+              <p class="card-body">{servicio.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </section>
+
+  <script is:inline>
+    function scrollToService(serviceId) {
+      console.log("Click");
+      const selectedCard = document.getElementById(serviceId);
+      if (selectedCard) {
+        const cardGallery = document.querySelector(".card-gallery");
+
+        // Desplaza el scroll de la card-gallery a la posición de la tarjeta seleccionada
+        cardGallery.scrollTo({
+          top: selectedCard.offsetTop - 180,
+          behavior: "smooth",
+        });
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes subrayar {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+    .linea-nav {
+      position: relative;
+      display: inline-block;
+      &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background: #357ab8;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+    .card-gallery {
+      scrollbar-width: none;
+      scrollbar-color: #044590 #e0e0e0;
+    }
+    .card-gallery::-webkit-scrollbar {
+      width: 8px;
+    }
+    .card-gallery::-webkit-scrollbar-track {
+      background: #e0e0e0;
+      border-radius: 10px;
+    }
+    .card-gallery::-webkit-scrollbar-thumb:hover {
+      background-color: #357ab8;
+      border-radius: 10px;
+    }
+
+    .service-card {
+      margin: 35px 0; /* Margen entre tarjetas */
+      transition: transform 0.3s; /* Transición para efecto al pasar el mouse */
+      width: 300px;
+    }
+
+    .service-card h3 {
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 1.5rem; /* Tamaño del título */
+      margin-bottom: 0.5rem; /* Espaciado inferior */
+      @apply text-sky-900;
+    }
+
+    .card-body {
+      color: #000000; /* Color del cuerpo del texto */
+      margin-bottom: 0.5rem; /* Espaciado inferior */
+    }
+  </style>
+</Layout>
