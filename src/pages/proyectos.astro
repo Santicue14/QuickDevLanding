@@ -6,7 +6,8 @@ import photoGestor from "../../public/resources/proyectos/gestor-empresas.png";
 import photoPres from "../../public/resources/proyectos/landing-green.png";
 import Image from "astro/components/Image.astro";
 import Layout from "../layouts/Layout.astro";
-const searchPhoto = (key) => {
+
+const searchPhoto = (key: string) => {
   switch (key) {
     case "cerraj":
       return photoCerrajeria;
@@ -24,7 +25,6 @@ const searchPhoto = (key) => {
   <section
     id="proyectos"
     class="py-20 bg-gray-900 flex flex-col gap-y-8 select-none"
-    transition:animate="slide"
   >
     <div class="intro pl-12">
       <h2 class="text-start text-2xl font-bold text-white">
@@ -36,12 +36,13 @@ const searchPhoto = (key) => {
       </p>
     </div>
     <div
-      class="container-projects w-[90vw] mx-auto grid grid-flow-row grid-cols-2 gap-12"
+      class="container-projects w-[90vw] mx-auto grid grid-flow-row h-fit sm:grid-cols-2 gap-12"
     >
       {
         proyectos.map((proyecto, index) => (
           <div
             class={`relative flex items-center ${index % 2 == 0 ? "flex-row" : "flex-row-reverse ml-auto"} rounded-xl gap-4 transition-transform`}
+            transition:animate="slide"
           >
             <div class="img-container  h bg-white text-black relative">
               <Image
@@ -50,12 +51,12 @@ const searchPhoto = (key) => {
                 class="w-full h-auto"
               />
             </div>
-            <div class="description absolute inset-0 flex flex-col justify-center items-center p-6 bg-gray-800 bg-opacity-90 text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <div class="description  absolute inset-0 flex flex-col justify-center items-center p-6 bg-gray-800 bg-opacity-90 text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
               <div class="title flex gap-4 items-center">
                 <h3>{proyecto.nombre}</h3>
-                <a class="text-sm text-blue-500">Ver más</a>
+                <a class="text-sm text-blue-500" href={`proyecto/${proyecto.id}`}>Ver más</a>
               </div>
-              <p>{proyecto.descripcion}</p>
+              <p class="hidden sm:block">{proyecto.descripcion}</p>
             </div>
           </div>
         ))

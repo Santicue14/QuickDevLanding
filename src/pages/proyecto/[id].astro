@@ -15,36 +15,37 @@ const proyecto = proyectos.find(proy => proy.id === Number(Astro.params.id));
 ---
 
 <Layout title={`${proyecto? proyecto.nombre : 'Proyecto '} | QuickDev Solutions`}>
-    <section class="proyecto-container">
+    <section class="proyecto-container max-h-[75vh] flex items-center justify-between mx-auto mt-12" >
         <div class="proyecto-header">
             <h1 class="proyecto-title">{proyecto.nombre}</h1>
             <p class="proyecto-description">{proyecto.descripcion}</p>
         </div>
 
-        <div class="proyecto-media">
+        <div class="proyecto-media flex flex-col gap-2">
             <!-- Video de presentación de YouTube -->
-            <iframe 
+            {proyecto.urlYt ?
+            <h6 class="font-semibold text-center text-lg">Video de presentación</h6>
+             <iframe 
                 class="proyecto-video"
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                title="Presentación del proyecto"
+                src={proyecto.urlYt}
+                title={`Proyecto ${proyecto.nombre}`}
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
-            ></iframe>
+            ></iframe> : <p>No se incluye un video de este proyecto</p>}
         </div>
 
-        <div class="proyecto-details">
+        <!-- <div class="proyecto-details">
             <a href={proyecto.link} target="_blank" class="btn btn-primary">
                 Ver Proyecto
             </a>
-        </div>
+        </div> -->
     </section>
 
     <style>
         .proyecto-container {
             padding: 2rem;
             max-width: 1200px;
-            margin: 0 auto;
             background-color: #f8fafc;
             border-radius: 12px;
             box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
@@ -53,6 +54,8 @@ const proyecto = proyectos.find(proy => proy.id === Number(Astro.params.id));
         .proyecto-header {
             text-align: center;
             margin-bottom: 2rem;
+            max-width: 32rem;
+            @apply overflow-y-auto
         }
 
         .proyecto-title {
@@ -68,16 +71,17 @@ const proyecto = proyectos.find(proy => proy.id === Number(Astro.params.id));
         }
 
         .proyecto-media {
-            display: flex;
             justify-content: center;
+            align-items: center;
             margin-bottom: 2rem;
+            width: 600px;
+            height: 300px;
         }
 
         .proyecto-video {
-            width: 100%;
-            max-width: 800px;
-            height: 450px;
             border-radius: 8px;
+            height: 100%;
+            width: 100%;
             border: none;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         }

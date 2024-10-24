@@ -4,7 +4,8 @@
       "codePic": "cerraj",
       "nombre": "Catálogo de cerrajería",
       "descripcion": "Un catálogo interactivo diseñado para mostrar una amplia variedad de productos de cerrajería, ofreciendo a los usuarios una navegación sencilla y accesible. El sitio incluye imágenes de productos, descripciones detalladas y un sistema de búsqueda para facilitar la experiencia del usuario, permitiendo encontrar rápidamente lo que necesitan. Además, el catálogo está optimizado para dispositivos móviles, garantizando una visualización adecuada en cualquier pantalla.",
-      "link": "https://www.grllaves.com.ar"
+      "link": "https://www.grllaves.com.ar",
+      "urlYt": "https://www.youtube.com/embed/KKcGPptkJf4?si=L3C5EETDaoQbAFsF"
     },
     {
       "id": 2,
@@ -25,7 +26,8 @@
       "codePic": "john",
         "nombre": "Reportes de alarmas para Sc Jhonson",
         "descripcion": "Este sistema permite la gestión eficiente de los reportes de alarmas generados en las instalaciones de SC Johnson. Los usuarios pueden filtrar los reportes por línea de producto, lo que facilita la identificación y el análisis de incidentes específicos. El sistema proporciona una interfaz intuitiva que permite a los operadores acceder rápidamente a los datos relevantes, visualizar el historial de alarmas y realizar un seguimiento de las tendencias a lo largo del tiempo. Además, cuenta con funciones de exportación y generación de informes que ayudan en la toma de decisiones y en la mejora continua de los procesos de seguridad y respuesta ante incidentes. Este sistema es clave para garantizar la seguridad operativa y el cumplimiento de las normativas en las instalaciones de SC Johnson.",
-        "link": "https://parquizacionesgreenpark.vercel.app/"
+        "link": "https://parquizacionesgreenpark.vercel.app/",
+        "urlYt":"https://www.youtube.com/embed/0HNzhL2vH7I?si=FOhp89shFH7GutAK"
     }
   ]
   

@@ -5,7 +5,7 @@ import ArrowDown from "../../public/resources/arrow-down.svg";
 import proyectos from "../data/proyectos.json";
 ---
 <nav
-class="flex items-center justify-between px-12 sticky z-10 top-0 transition-all duration-300 navbar-transparent"
+class="hidden sm:flex items-center justify-between px-12 py-3 sticky z-10 top-0 transition-all duration-300 navbar-transparent"
 id="navbar"
 >
 <a href="/">
@@ -18,18 +18,18 @@ id="navbar"
     />
   </div>
 </a>
-<ul class="flex gap-6 font-semibold uppercase">
+<ul class="flex gap-6 font-semibold uppercase text-white">
   <li class="lista-desplegable relative">
-    <a href="proyectos" class="flex gap-4">
+    <a href="/proyectos" class="flex gap-4">
       Proyectos realizados
-      <Image loading="lazy" src={ArrowDown} alt="Flecha para abajo" class="text-white" />
+      <Image loading="eager" src={ArrowDown} alt="Flecha para abajo" class="text-white" title="Arrow down"/>
     </a>
     <ul
       class="contenido-desplegable absolute bg-cyan-950 left-0 top-full opacity-0 invisible transition-opacity duration-300 ease-in-out"
     >
       {
         proyectos.map((proyecto) => (
-          <a href={`proyecto/${proyecto.id}`} title={`Proyecto ${proyecto.nombre}`}>
+          <a href={`/proyecto/${proyecto.id}`} title={proyecto.nombre} aria-label={proyecto.nombre}>
             <li>{proyecto.nombre}</li>
           </a>
         ))

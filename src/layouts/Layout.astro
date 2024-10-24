@@ -24,15 +24,22 @@ import Navbar from "../components/Navbar.astro";
     <ViewTransitions />
   </head>
   <body
-    class="bg-gradient-to-bl from-blue-950 to-slate-300 relative top-0 min-h-screen text-white"
+    class="bg-gradient-to-bl from-blue-950 to-slate-300 grid"
   >
-  <Navbar/>
-    <main>
+    <Navbar />
+    <main class="pb-28 h-full">
       <slot />
     </main>
-    <!-- <div class="sticky flex border border-red-500 bottom-4">
-      Whatsapp
-    </div> -->
-
+    
+    <footer class="p-28 bg-slate-900 flex justify-center items-center mt-auto text-cyan-400 ">
+      <p class="text-center text-sm">© QuickDev Solutions - Todos los derechos reservados</p>
+    </footer>
   </body>
 </html>
+
+<style>
+  body{
+    min-height: 100vh;
+    grid-template-rows:auto 1fr auto ;
+  }
+</style>
